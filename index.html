@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yükleniyor...</title>
+    <style>
+        body { background-color: #ffffff; margin: 0; padding: 0; }
+    </style>
+    <script>
+        (function() {
+            // Kendi kanal kullanıcı adını @ işaretiyle buraya yaz
+            var channel = "@SnKahraman"; 
+            var youtubeUrl = "https://www.youtube.com/" + channel;
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Android için "Intent" protokolü (En hızlı tetikleyici)
+            if (/android/i.test(userAgent)) {
+                window.location.replace("intent://www.youtube.com/" + channel + "#Intent;package=com.google.android.youtube;scheme=https;end");
+            } 
+            // iOS (iPhone/iPad) için "YouTube URL Scheme"
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.replace("youtube://www.youtube.com/" + channel);
+                // Eğer uygulama yoksa 1.5 saniye sonra tarayıcıdan devam et
+                setTimeout(function() { window.location.replace(youtubeUrl); }, 1500);
+            } 
+            // Bilgisayar veya diğer cihazlar için normal yönlendirme
+            else {
+                window.location.replace(youtubeUrl);
+            }
+        })();
+    </script>
+</head>
+<body>
+    </body>
+</html>
