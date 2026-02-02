@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yükleniyor...</title>
-    <style>
-        body { background-color: #ffffff; margin: 0; padding: 0; }
-    </style>
+
+    <meta property="og:title" content="SnKahraman">
+    <meta property="og:description" content="ABONE OLUN! Her hafta yeni SnKahraman videoları! Başarılar:">
+    <meta property="og:image" content="https://yt3.googleusercontent.com/9XADFVgWAccwJow2futzaCt03aFj6htpAmewSipwvgK13wQyl3d04hqZjLCL6CQUGnqm8m7o2EQ=s160-c-k-c0x00ffffff-no-rj">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SnKahraman">
+    <meta name="twitter:description" content="ABONE OLUN! Her hafta yeni SnKahraman videoları! Başarılar:">
+    <meta name="twitter:image" content="https://yt3.googleusercontent.com/9XADFVgWAccwJow2futzaCt03aFj6htpAmewSipwvgK13wQyl3d04hqZjLCL6CQUGnqm8m7o2EQ=s160-c-k-c0x00ffffff-no-rj">
+
+    <link rel="icon" href="https://www.youtube.com/favicon.ico">
+
+    <title>SnKahraman - YouTube</title>
+
     <script>
         (function() {
-            // Kendi kanal kullanıcı adını @ işaretiyle buraya yaz
+            // Yönlendirme Ayarları
             var channel = "@SnKahraman"; 
             var youtubeUrl = "https://www.youtube.com/" + channel;
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // Android için "Intent" protokolü (En hızlı tetikleyici)
             if (/android/i.test(userAgent)) {
                 window.location.replace("intent://www.youtube.com/" + channel + "#Intent;package=com.google.android.youtube;scheme=https;end");
             } 
-            // iOS (iPhone/iPad) için "YouTube URL Scheme"
             else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.replace("youtube://www.youtube.com/" + channel);
-                // Eğer uygulama yoksa 1.5 saniye sonra tarayıcıdan devam et
                 setTimeout(function() { window.location.replace(youtubeUrl); }, 1500);
             } 
-            // Bilgisayar veya diğer cihazlar için normal yönlendirme
             else {
                 window.location.replace(youtubeUrl);
             }
         })();
     </script>
 </head>
-<body>
+<body style="background-color: #ffffff;">
     </body>
 </html>
